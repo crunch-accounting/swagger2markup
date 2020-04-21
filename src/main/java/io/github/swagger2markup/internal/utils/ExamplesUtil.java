@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import io.github.swagger2markup.internal.adapter.ParameterAdapter;
 import io.github.swagger2markup.internal.adapter.PropertyAdapter;
@@ -245,7 +246,7 @@ public class ExamplesUtil {
      * @return a Map of examples
      */
     private static Map<String, Object> exampleMapForProperties(Map<String, Property> properties, Map<String, Model> definitions, DocumentResolver definitionDocumentResolver, MarkupDocBuilder markupDocBuilder, Map<String, Integer> refStack) {
-        Map<String, Object> exampleMap = new LinkedHashMap<>();
+        Map<String, Object> exampleMap = new TreeMap<>();
         if (properties != null) {
             for (Map.Entry<String, Property> property : properties.entrySet()) {
                 Object exampleObject = property.getValue().getExample();
